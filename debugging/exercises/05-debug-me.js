@@ -2,7 +2,7 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 // Fix the function below to pass the test!
 
-function multiplyByFour() {
+function multiplyByFour(number) {
   return number * 4;
 }
 

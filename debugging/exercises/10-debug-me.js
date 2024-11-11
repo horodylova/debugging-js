@@ -11,7 +11,7 @@ function getFishName(fish) {
     "Sea Turtle": "Crush",
   };
 
-  return tank[fish];
+  return fishTank[fish];
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.

@@ -4,7 +4,7 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function returnLastDigit(num) {
   const digitStr = String(num);
-  return digitStr[digitStr.length - 1];
+  return Number(digitStr[digitStr.length - 1]);
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.

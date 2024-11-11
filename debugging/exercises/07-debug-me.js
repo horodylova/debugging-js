@@ -11,7 +11,7 @@ function checkIfHarrisonCanBuy(money, product) {
     "500 Piece, Rare Bottle Cap Collection": 1,
   };
 
-  if (money <= carBootPrices[product]) {
+  if (money >= carBootPrices[product]) {
     return `Harrison can buy ${product}!`;
   }
   return `Harrison can not buy ${product} :(`;

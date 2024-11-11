@@ -9,7 +9,7 @@ function addSnack(snack) {
     "Haribos",
     "Monster Munch",
   ];
-  snacks.push(snacks);
+  snacks.push(snack);
   return snacks;
 }
 

@@ -3,7 +3,7 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 // Fix the function below to pass the test!
 
 function addNumbers(num1, num2) {
-  return Number(num1 + num2);
+  return Number(Number(num1) + Number(num2));
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.

@@ -3,10 +3,11 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 // Fix the function below to pass the test!
 
 function findKnownFlyers(superheroes) {
-  const knownFlyers = [];
+  let knownFlyers = [];
 
   for (let i = 0; i < superheroes.length; i++) {
-    if (superheroes[i].ability === "flying" || superheroes[i].isAnonymous) {
+    
+    if (superheroes[i].ability === "flying" && !superheroes[i].isAnonymous) {
       knownFlyers.push(superheroes[i]);
     }
   }
