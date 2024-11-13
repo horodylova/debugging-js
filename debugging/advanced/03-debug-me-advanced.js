@@ -1,8 +1,9 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function getCapitalisedArtists(arr) {
-  const artists = arr.map((pair) => {
-    return pair.split("-");
+  const artists = []
+  arr.map((pair) => {
+   artists.push(pair.split(" -")[0].toUpperCase());
   });
 
   return artists;
