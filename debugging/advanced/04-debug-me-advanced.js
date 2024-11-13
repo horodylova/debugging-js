@@ -1,9 +1,11 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
-const { sumArray } = require("./utils/sum.js");
+const sumArray = require("./utils/sum.js");
 
 function getBasketCost(arr) {
   const costs = arr.map((fruitObj) => fruitObj.cost);
+  console.log(costs);
   const total = sumArray(costs);
+  console.log(total);
   return `The total cost of the fruits is £${total}`;
 }
 
