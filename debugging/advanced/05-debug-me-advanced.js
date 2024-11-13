@@ -20,26 +20,16 @@ findHighestScoring([
 */
 
 //It is your job to fix it.
-
 function findHighestScoring(array, num) {
-  if (num === 0) {
+  if (num === 0 || array.length < num) {
     return [];
   }
 
-  array.sort((a, b) => {
-    return b.score - a.score;
-  });
+  array.sort((a, b) => b.score - a.score);
 
-  let multipleOfNum = 1;
-  for (let i = 1; i <= array.length; i++) {
-    if (i % num === 0) {
-      multipleOfNum++;
-    }
-  }
-  const newArray = array.filter((object, index) => {
-    return index < multipleOfNum;
-  });
-  return newArray;
+  const groupCount = Math.floor(array.length / num);
+
+  return array.slice(0, groupCount);
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.
