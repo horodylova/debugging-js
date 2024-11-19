@@ -1,6 +1,26 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function calculateJump(locations, jumpLength) {
+  const start = locations.indexOf("cat");
+
+  let miceNumberLeft = 0;
+  let miceNumberRight = 0;
+
+
+  for (let i = start - 1; i >= 0 && start - i <= jumpLength; i--) {
+    if (locations[i] === "mouse") {
+      miceNumberLeft++;
+    }
+  }
+
+  for (let i = start + 1; i < locations.length && i - start <= jumpLength; i++) {
+    if (locations[i] === "mouse") {
+      miceNumberRight++;
+    }
+  }
+
+  return Math.max(miceNumberLeft, miceNumberRight);
+}
 /*
 You will be given an array containing string representations of the locations of a cat and multiple mice. 
 You will also be given a positive integer which represents how far the cat can jump.
@@ -10,7 +30,6 @@ Your task is to calculate how many, if any, mice can the cat catch in one jump.
 Each space "x" expends 1 of the cat's movement. 
 The cat will always go for the highest number of mice it can catch if there are mice before and after it in the array.
 */
-}
 
 runTest(
   "cat catches mice when they are in one direction in the array",
@@ -23,7 +42,7 @@ runTest(
   }
 );
 
-skipTest("cat goes for the most mice it can catch", function () {
+runTest("cat goes for the most mice it can catch", function () {
   check(calculateJump(["mouse", "cat", "mouse", "mouse"], 2)).isEqualTo(2);
   check(
     calculateJump(["mouse", "x", "mouse", "cat", "x", "x", "mouse"], 3)

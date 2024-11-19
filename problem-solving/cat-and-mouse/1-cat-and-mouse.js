@@ -1,7 +1,7 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function calculateJump(locations, jumpLength) {
- 
+
   const catIndex = locations.indexOf("cat");
   const mouseIndex = locations.indexOf("mouse");
 
