@@ -1,6 +1,13 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function calculateJump(locations, catJumpLength, mouseRunLength) {
+
+const start = locations.indexOf("cat")
+const end = locations.indexOf("mouse")
+
+for(let i = start; i < end; )
+
+  return true
 /*
 You will be given an array containing string representations of the locations of a cat and multiple mice. Hiding holes for mice are represented by "O".
 You will also be given one positive integer which represents how far the cat can jump, and a second one representing how far the mouse can move.
@@ -22,7 +29,7 @@ runTest(
   }
 );
 
-skipTest(
+runTest(
   "cat fails to catch the mouse when the mouse is closer, or same distance to escape",
   function () {
     check(
